@@ -295,11 +295,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 28: ANS1 = 0;
 "28
 [e = _ANS1 -> -> 0 `i `b ]
-[; ;main.c: 30: GP2=0; GP1=0; GP0=0;
+[; ;main.c: 30: GP2=1; GP1=1; GP0=1;
 "30
-[e = _GP2 -> -> 0 `i `b ]
-[e = _GP1 -> -> 0 `i `b ]
-[e = _GP0 -> -> 0 `i `b ]
+[e = _GP2 -> -> 1 `i `b ]
+[e = _GP1 -> -> 1 `i `b ]
+[e = _GP0 -> -> 1 `i `b ]
 [; ;main.c: 32: while(1) {
 "32
 [e :U 31 ]
@@ -308,50 +308,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 "34
 [e $ ! == -> _GP3 `i -> 0 `i 33  ]
 {
-[; ;main.c: 35: GP0=1;
+[; ;main.c: 35: GP2=1; GP1=1; GP0=1;
 "35
+[e = _GP2 -> -> 1 `i `b ]
+[e = _GP1 -> -> 1 `i `b ]
 [e = _GP0 -> -> 1 `i `b ]
-[; ;main.c: 36: Delay_us(180);
+[; ;main.c: 36: Delay_us(500);
 "36
-[e ( _Delay_us (1 -> -> 180 `i `ui ]
-[; ;main.c: 37: GP0=0;
+[e ( _Delay_us (1 -> -> 500 `i `ui ]
+[; ;main.c: 37: GP2=1; GP1=0; GP0=1;
 "37
-[e = _GP0 -> -> 0 `i `b ]
-[; ;main.c: 38: Delay_us(1500-180);
+[e = _GP2 -> -> 1 `i `b ]
+[e = _GP1 -> -> 0 `i `b ]
+[e = _GP0 -> -> 1 `i `b ]
+[; ;main.c: 38: Delay_us(500);
 "38
-[e ( _Delay_us (1 -> - -> 1500 `i -> 180 `i `ui ]
+[e ( _Delay_us (1 -> -> 500 `i `ui ]
 "39
 }
 [e :U 33 ]
 [; ;main.c: 39: };
-[; ;main.c: 41: if(GP3 != 0) {
 "41
-[e $ ! != -> _GP3 `i -> 0 `i 34  ]
-{
-[; ;main.c: 42: GP0=1;
-"42
-[e = _GP0 -> -> 1 `i `b ]
-[; ;main.c: 43: Delay_us(50);
-"43
-[e ( _Delay_us (1 -> -> 50 `i `ui ]
-[; ;main.c: 44: GP0=0;
-"44
-[e = _GP0 -> -> 0 `i `b ]
-[; ;main.c: 45: Delay_us(1500-50);
-"45
-[e ( _Delay_us (1 -> - -> 1500 `i -> 50 `i `ui ]
-"46
-}
-[e :U 34 ]
-[; ;main.c: 46: };
-"48
 }
 [e :U 30 ]
 "32
 [e $U 31  ]
 [e :U 32 ]
-[; ;main.c: 48: };
-[; ;main.c: 49: }
-"49
+[; ;main.c: 41: };
+[; ;main.c: 42: }
+"42
 [e :UE 29 ]
 }

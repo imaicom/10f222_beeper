@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/10F222/production/10f222_sweep_servo.production.hex">
+  <executable name="dist/10F222/production/10f222_beeper.production.hex">
     <memory name="program">
       <units>words</units>
       <length>512</length>
-      <used>67</used>
-      <free>445</free>
+      <used>57</used>
+      <free>455</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

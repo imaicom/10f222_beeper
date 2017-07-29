@@ -27,23 +27,16 @@ void main(void) {
     ANS0 = 0;   // GP0 = digital
     ANS1 = 0;   // GP1 = digital
     
-    GP2=0; GP1=0; GP0=0;
+    GP2=1; GP1=1; GP0=1;
 
     while(1) {
         
-        if(GP3 == 0) {  // optimize to MG996R
-            GP0=1;
-            Delay_us(180);
-            GP0=0;
-            Delay_us(1500-180);   
+        if(GP3 == 0) {  // beep
+            GP2=1; GP1=1; GP0=1;
+            Delay_us(500);
+            GP2=1; GP1=0; GP0=1;
+            Delay_us(500);   
         };
-        
-       if(GP3 != 0) {
-            GP0=1;
-            Delay_us(50);
-            GP0=0;
-            Delay_us(1500-50);   
-            };
          
     };  //  while(1)
 }
