@@ -4,7 +4,7 @@
 import RPi.GPIO as GPIO
 import time
 
-SOUNDER = 21
+SOUNDER = 26
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(SOUNDER, GPIO.OUT, initial = GPIO.LOW)
